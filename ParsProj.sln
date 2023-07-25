@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ParsProj", "ParsProj.pyproj", "{23BA672F-8EB9-4BB2-8390-D4667DB0E6EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23BA672F-8EB9-4BB2-8390-D4667DB0E6EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BA672F-8EB9-4BB2-8390-D4667DB0E6EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BA672F-8EB9-4BB2-8390-D4667DB0E6EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BA672F-8EB9-4BB2-8390-D4667DB0E6EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E05384E-7450-4F06-843A-93566500C521}
+	EndGlobalSection
+EndGlobal

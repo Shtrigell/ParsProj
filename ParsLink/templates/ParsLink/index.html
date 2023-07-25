@@ -1,0 +1,37 @@
+{% extends 'ParsLink/base.html' %}
+
+{% block content %}
+
+
+
+<form method="post" action="">
+
+    {% csrf_token %}
+
+    <div class="form-error">{{ form.non_field_errors }}</div>
+
+    {% for f in form %}
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+
+    <button type="submit">Pars it</button>
+
+    <table cellpadding="10" border="1">
+<tr>
+    <th>URL</th>
+    <th>Links</th>
+    <th>Date</th>
+</tr>
+{% for p in posts %}
+<tr>
+    <td>{{ p.title }}</td>
+    <td>{{ p.content }}</td>
+    <td>{{ p.time_create }}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+</form>
+{% endblock %}
