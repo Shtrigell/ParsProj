@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 
-import requests
-from bs4 import BeautifulSoup
 from .models import *
 from .forms import *
+from .services import parse, clean_history
 
 menu = ['Главная','История']
 
@@ -14,33 +13,30 @@ def index(request):
         form = AddUrlForm(request.POST)
         if form.is_valid():
             try:
-                links = pars(form.cleaned_data['content'])
+                links = parse.parse(form.cleaned_data['content'])
             except:
                 form.add_error(None, 'Ошибка обработки ссылки')
     else:
         form = AddUrlForm()
+
     return render(request,'ParsLink/index.html', {'menu': menu,'title': 'Парсинатор-3000','form':form, 'posts': links}) 
 
 def history(request):
+    if request.method == 'POST':
+        form = HistoryForm(request.POST)
+        if form.is_valid():
+            try:
+                clean_history.clean_history()
+            except:
+                form.add_error(None, 'Ошибка очистка истории')
+    else:
+        form = HistoryForm()
+
     history_posts = History.objects.all()
-    return render(request,'ParsLink/history.html', {'posts': history_posts,'menu': menu,'title': 'History'})
+    return render(request,'ParsLink/history.html', {'menu': menu,'title': 'History','form':form, 'posts': history_posts})
 
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Page not found</h1>')
 
-def pars (pars_url):
-    new_links=[] # Этот список выводится в таблицу, заняться выводом, потом уже интерфейс и преколы
-    page = requests.get(pars_url)
-    soup = BeautifulSoup(page.content, "html.parser")
-    all_links = soup.find_all("a")
-    for link in all_links:
-        temp_link=link.get("href")
-        if temp_link.startswith("/"):
-            new_links.append(pars_url + temp_link)
-            add_history = History.objects.create(title = pars_url, content = pars_url + temp_link)
-        else:
-            new_links.append(temp_link)
-            add_history = History.objects.create(title = pars_url, content = temp_link)
-    return new_links
 
 

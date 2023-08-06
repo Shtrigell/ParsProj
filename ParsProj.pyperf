@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ProfilingTarget xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectTarget>
+    <TargetProject>23ba672f-8eb9-4bb2-8390-d4667db0e6ec</TargetProject>
+    <FriendlyName>ParsProj</FriendlyName>
+  </ProjectTarget>
+  <Reports>
+    <Report>
+      <Filename>C:\Users\Shtrige11\AppData\Local\Temp\ParsProj_20230806.vsp</Filename>
+    </Report>
+    <Report>
+      <Filename>C:\Users\Shtrige11\AppData\Local\Temp\ParsProj_20230806(1).vsp</Filename>
+    </Report>
+    <Report>
+      <Filename>C:\Users\Shtrige11\AppData\Local\Temp\ParsProj_20230806(2).vsp</Filename>
+    </Report>
+  </Reports>
+  <UseVTune>false</UseVTune>
+</ProfilingTarget>

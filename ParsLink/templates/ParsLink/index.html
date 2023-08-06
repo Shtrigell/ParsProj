@@ -19,15 +19,11 @@
 
     <table cellpadding="10" border="1">
 <tr>
-    <th>URL</th>
     <th>Links</th>
-    <th>Date</th>
 </tr>
 {% for p in posts %}
 <tr>
     <td>{{ p.title }}</td>
-    <td>{{ p.content }}</td>
-    <td>{{ p.time_create }}</td>
 </tr>
 {% endfor %}
 </table>

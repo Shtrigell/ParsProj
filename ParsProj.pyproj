@@ -39,6 +39,12 @@
     <Compile Include="ParsLink\forms.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ParsLink\services\clean_history.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParsLink\services\parse.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ParsLink\urls.py">
       <SubType>Code</SubType>
     </Compile>
@@ -1777,6 +1783,7 @@
     <Folder Include="obj\Debug\" />
     <Folder Include="ParsLink\" />
     <Folder Include="ParsLink\migrations\" />
+    <Folder Include="ParsLink\services\" />
     <Folder Include="ParsLink\static\" />
     <Folder Include="ParsLink\static\ParsLink\" />
     <Folder Include="ParsLink\static\ParsLink\css\" />

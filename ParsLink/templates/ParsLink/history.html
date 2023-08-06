@@ -3,8 +3,12 @@
 {% block content %}
 <h1>{{title}}</h1>
 
-<h1><input type = "button" value="Clean"></h1>
+<form method="post" action="">
 
+    {% csrf_token %}
+
+
+    <button type="submit">Clean</button>
 
 <table cellpadding="10" border="1">
 <tr>
