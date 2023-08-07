@@ -3,6 +3,17 @@ from bs4 import BeautifulSoup
 from ParsLink.models import *
 
 def parse (pars_url):
+    """
+    Функция парсинга
+
+    Получает URL, парсит содержимое по указанному тегу, возвращает список ссылок.
+
+    new_links - список, который заполняется ссылками, которые парсятся с указанного URL.
+    page - строка, содержащая извлечённые данные со страницы.
+    all_links - список, содержащий найденные ссылки по указаному тегу.
+    temp_link - строка, содержащая спаршенную ссылку. Нужна для проверки и дополнения относительных ссылок.
+    
+    """
     new_links = [] 
     page = requests.get(pars_url)
     soup = BeautifulSoup(page.content, "html.parser")
