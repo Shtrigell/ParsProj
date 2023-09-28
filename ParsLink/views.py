@@ -38,7 +38,15 @@ def index(request):
 
 
 class ParsLinkHistory(ListView, FormView, DataMixin):
+    """
+    Класс представления страницы истории.
 
+    Наследован от:
+    ListView -  базовый класс Django отображение содержимого БД,
+    FormView -  базовый класс Django отображение и валидация формы,
+    DataMixin - формирование контекста
+
+    """
     model = History
     template_name = 'ParsLink/history.html'
     context_object_name = 'posts'
@@ -62,6 +70,14 @@ def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Page not found</h1>')
 
 class RegisterUser(DataMixin, CreateView):
+    """
+    Класс представления страницы регистрации.
+
+    Наследован от:
+    CreateView - базовый класс Django создание объекта,
+    DataMixin - формирование контекста
+
+    """
 
     form_class = RegisterUserForm
     template_name = 'ParsLink/register.html'
@@ -78,6 +94,14 @@ class RegisterUser(DataMixin, CreateView):
         return redirect('home')
 
 class LoginUser(DataMixin, LoginView):
+    """
+    Класс представления страницы аутентификации.
+
+    Наследован от:
+    LoginView - базовый класс Django отображения формы входа и соответствующие действия,
+    DataMixin - формирование контекста
+
+    """
 
     form_class = LoginUserForm
     template_name = 'ParsLink/login.html'
