@@ -87,11 +87,17 @@ ul.mainmenu li {
 	margin: 18px 40px 0 30px;
 }
 ul.mainmenu li.logo {margin: 0;}
-ul.mainmenu li.last {float: right;}
+ul.mainmenu li.last {
+		float: right;
+		color: #065cb0;
+}
 /*ссылки в хэдере*/
 ul.mainmenu li a {
 		color: #065cb0;
 		text-decoration: none;
+}
+ul.mainmenu li a:hover {
+		color: #FDA83D;
 }
 .table-content {
 	width: 100%;

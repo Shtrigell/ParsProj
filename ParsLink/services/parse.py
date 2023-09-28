@@ -14,8 +14,13 @@ def parse (pars_url):
     temp_link - строка, содержащая спаршенную ссылку. Нужна для проверки и дополнения относительных ссылок.
     
     """
-    new_links = [] 
-    page = requests.get(pars_url)
+    new_links = []
+    try:
+        page = requests.get(pars_url)
+    except:
+        print('Error')
+        new_links.append('Ошибка обработки ссылки')
+        return new_links
     soup = BeautifulSoup(page.content, "html.parser")
     all_links = soup.find_all("a")
     for link in all_links:
