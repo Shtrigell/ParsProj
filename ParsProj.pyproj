@@ -592,6 +592,7 @@
     <Content Include="ParsLink\templates\ParsLink\base.html" />
     <Content Include="ParsLink\templates\ParsLink\register.html" />
     <Content Include="ParsLink\templates\ParsLink\login.html" />
+    <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="venv\Lib\site-packages\distutils-precedence.pth" />
     <Content Include="venv\Lib\site-packages\pip-22.2.1.dist-info\entry_points.txt" />
