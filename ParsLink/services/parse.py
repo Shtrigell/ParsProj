@@ -2,6 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 from ParsLink.models import *
 
+def scan_cup(list_unit):
+    if list_unit.startwith("#") == True or list_unit == " ":
+        return False
+    else:
+        return True
+    
+
 def parse (pars_url):
     """
     Функция парсинга
@@ -28,6 +35,8 @@ def parse (pars_url):
         if temp_link.startswith("/"):
             new_links.append(pars_url + temp_link)
             add_history = History.objects.create(title = pars_url, content = pars_url + temp_link)
+        elif temp_link.startswith("#") == True:
+            pass
         else:
             new_links.append(temp_link)
             add_history = History.objects.create(title = pars_url, content = temp_link)
